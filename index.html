@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>一方院・旅宿｜古坑東和陳宅 歷史導覽</title>
+<meta name="theme-color" content="#F7F3EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brick:#BA4B2F;   /* 陳磚紅 */
+    --green:#26573C;   /* 宅院綠 */
+    --paper:#F7F3EC;   /* 稻埕白 */
+    --ink:#160604;     /* 書院墨 */
+    --paper-2:#efe8db;
+    --line:#d9cfbe;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Noto Sans TC",system-ui,sans-serif;
+    color:var(--ink); background:var(--paper);
+    line-height:1.85; letter-spacing:.01em;
+    padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  }
+  .wrap{max-width:620px;margin:0 auto;padding:0 22px 64px}
+  .serif{font-family:"Noto Serif TC",serif}
+
+  /* ── 頂部品牌列 ── */
+  header{padding:26px 0 14px;text-align:center}
+  header .mark{
+    font-family:"Noto Serif TC",serif;font-weight:700;font-size:26px;
+    color:var(--brick);letter-spacing:.18em;
+  }
+  header .en{font-size:11px;letter-spacing:.32em;color:var(--green);margin-top:5px;text-transform:uppercase}
+  .rule{height:1px;background:var(--line);margin:18px 0 0}
+
+  /* ── 首頁 ── */
+  #home .hero{padding:30px 0 8px;text-align:center}
+  #home .hero h1{font-size:23px;font-weight:500;line-height:1.6;color:var(--ink)}
+  #home .hero p{margin-top:18px;color:#574b41;font-size:15.5px;text-align:left}
+  .toc{margin-top:34px;display:flex;flex-direction:column;gap:12px}
+  .toc-item{
+    display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;transition:transform .12s ease,box-shadow .12s ease;
+  }
+  .toc-item:active{transform:scale(.99)}
+  .toc-num{
+    flex:0 0 auto;width:38px;height:38px;border-radius:50%;
+    background:var(--brick);color:#fff;display:grid;place-items:center;
+    font-family:"Noto Serif TC",serif;font-weight:700;font-size:17px;
+  }
+  .toc-tt{font-weight:500;font-size:16px}
+  .toc-en{font-size:11px;letter-spacing:.14em;color:var(--green);margin-top:2px}
+
+  /* ── 單站 ── */
+  .back{display:inline-flex;align-items:center;gap:6px;color:var(--green);
+    text-decoration:none;font-size:14px;margin:6px 0 4px}
+  .stop-no{font-family:"Noto Serif TC",serif;color:var(--brick);font-size:14px;letter-spacing:.2em;margin-top:14px}
+  .stop-tt{font-family:"Noto Serif TC",serif;font-weight:700;font-size:27px;line-height:1.35;margin-top:4px}
+  .stop-en{font-size:11.5px;letter-spacing:.26em;color:var(--green);text-transform:uppercase;margin-top:8px}
+
+  .photo{
+    margin:22px 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+    background:var(--paper-2);aspect-ratio:4/3;display:grid;place-items:center;
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo .ph{text-align:center;color:#9c8e7d;font-size:13px;padding:20px}
+  .photo .ph .icon{font-size:30px;display:block;margin-bottom:8px;opacity:.5}
+
+  .essence{
+    border-left:3px solid var(--brick);background:var(--paper-2);
+    padding:14px 16px;border-radius:0 10px 10px 0;font-size:15.5px;color:#4a3f37;margin-bottom:8px;
+  }
+
+  /* ── 語音播放器 ── */
+  .player{
+    margin:22px 0;background:var(--green);border-radius:14px;
+    padding:15px 17px;color:var(--paper);
+  }
+  .player .lbl{font-size:13px;letter-spacing:.08em;display:flex;align-items:center;gap:8px;margin-bottom:10px;opacity:.92}
+  audio{width:100%;height:38px}
+  .player .note{font-size:11.5px;opacity:.7;margin-top:8px}
+
+  .story{font-size:16px;color:var(--ink);margin-top:6px}
+  .story p{margin-bottom:0}
+
+  .nav{display:flex;justify-content:space-between;gap:12px;margin-top:34px}
+  .nav a{
+    flex:1;text-decoration:none;text-align:center;padding:13px;border-radius:11px;
+    border:1px solid var(--line);color:var(--green);font-size:14px;background:var(--paper-2);
+  }
+  .nav a.primary{background:var(--brick);color:#fff;border-color:var(--brick)}
+  .nav a.disabled{opacity:.35;pointer-events:none}
+
+  footer{text-align:center;color:#9c8e7d;font-size:11.5px;margin-top:44px;line-height:1.7}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark serif">一方院</div>
+    <div class="en">Yifang Courtyard Stay</div>
+    <div class="rule"></div>
+  </header>
+
+  <!-- 首頁 -->
+  <section id="home" class="hidden">
+    <div class="hero">
+      <h1 class="serif" id="home-sub"></h1>
+      <p id="home-intro"></p>
+    </div>
+    <nav class="toc" id="toc"></nav>
+  </section>
+
+  <!-- 單站 -->
+  <section id="stop" class="hidden">
+    <a class="back" href="#home">← 回導覽總覽</a>
+    <div class="stop-no serif" id="s-no"></div>
+    <h2 class="stop-tt" id="s-tt"></h2>
+    <div class="stop-en" id="s-en"></div>
+    <div class="photo" id="s-photo"></div>
+    <div class="essence" id="s-essence"></div>
+    <div class="player">
+      <div class="lbl">🎧 語音導覽（國語）</div>
+      <audio id="s-audio" controls preload="none"></audio>
+      <div class="note">點播放鍵，聽老厝說自己的故事</div>
+    </div>
+    <div class="story" id="s-story"></div>
+    <div class="nav" id="s-nav"></div>
+  </section>
+
+  <footer>
+    雲林縣歷史建築・大正七年（1918）<br>
+    古坑鄉東和村廣濟路 127-1 號｜一方院・旅宿
+  </footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+let DATA = null;
+
+async function boot(){
+  try{
+    const res = await fetch('stops.json', {cache:'no-store'});
+    DATA = await res.json();
+  }catch(e){
+    $('#home').classList.remove('hidden');
+    $('#home-intro').textContent = '內容載入失敗，請用網頁伺服器開啟（GitHub Pages 上正常運作）。';
+    return;
+  }
+  route();
+}
+window.addEventListener('hashchange', route);
+
+function route(){
+  const h = (location.hash || '').replace('#','');
+  const id = parseInt(h, 10);
+  if(id >= 1 && id <= DATA.stops.length){ renderStop(id); }
+  else { renderHome(); }
+  window.scrollTo(0,0);
+}
+
+function renderHome(){
+  $('#stop').classList.add('hidden');
+  $('#home').classList.remove('hidden');
+  $('#home-sub').textContent = DATA.site.subtitle;
+  $('#home-intro').textContent = DATA.site.intro;
+  const toc = $('#toc'); toc.innerHTML = '';
+  DATA.stops.forEach(s=>{
+    const a = document.createElement('a');
+    a.className = 'toc-item'; a.href = '#'+s.id;
+    a.innerHTML = `<span class="toc-num serif">${s.id}</span>
+      <span><span class="toc-tt">${s.title}</span><br><span class="toc-en">${s.en}</span></span>`;
+    toc.appendChild(a);
+  });
+}
+
+function renderStop(id){
+  const s = DATA.stops.find(x=>x.id===id);
+  const n = DATA.stops.length;
+  $('#home').classList.add('hidden');
+  $('#stop').classList.remove('hidden');
+  $('#s-no').textContent = `第 ${id} 站 ／ 共 ${n} 站`;
+  $('#s-tt').textContent = s.title;
+  $('#s-en').textContent = s.en;
+  $('#s-essence').textContent = s.essence;
+  $('#s-story').innerHTML = `<p>${s.story}</p>`;
+
+  // 照片：有檔就顯示，沒有就優雅留空
+  const ph = $('#s-photo');
+  ph.innerHTML = `<div class="ph"><span class="icon">🏚️</span>照片整理中</div>`;
+  const img = new Image();
+  img.onload = ()=>{ ph.innerHTML=''; ph.appendChild(img); };
+  img.alt = s.title; img.src = 'img/'+s.img;
+
+  const au = $('#s-audio');
+  au.src = 'audio/'+s.audio;
+
+  // 上一站 / 下一站
+  const nav = $('#s-nav'); nav.innerHTML='';
+  const prev = document.createElement('a');
+  prev.textContent = '← 上一站';
+  if(id>1){ prev.href = '#'+(id-1); } else { prev.className='disabled'; prev.href='#home'; }
+  const next = document.createElement('a');
+  next.className = 'primary';
+  if(id<n){ next.textContent='下一站 →'; next.href='#'+(id+1); }
+  else { next.textContent='完成・回總覽'; next.href='#home'; }
+  nav.appendChild(prev); nav.appendChild(next);
+}
+
+boot();
+</script>
+</body>
+</html>
