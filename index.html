@@ -121,7 +121,6 @@
     <h2 class="stop-tt" id="s-tt"></h2>
     <div class="stop-en" id="s-en"></div>
     <div class="photo" id="s-photo"></div>
-    <div class="essence" id="s-essence"></div>
     <div class="player">
       <div class="lbl">🎧 語音導覽（國語）</div>
       <audio id="s-audio" controls preload="none"></audio>
@@ -185,7 +184,6 @@ function renderStop(id){
   $('#s-no').textContent = `第 ${id} 站 ／ 共 ${n} 站`;
   $('#s-tt').textContent = s.title;
   $('#s-en').textContent = s.en;
-  $('#s-essence').textContent = s.essence;
   $('#s-story').innerHTML = `<p>${s.story}</p>`;
 
   // 照片：有檔就顯示，沒有就優雅留空
