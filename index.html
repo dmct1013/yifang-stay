@@ -140,6 +140,12 @@
 const $ = s => document.querySelector(s);
 let DATA = null;
 
+function escapeHTML(text){
+  return String(text).replace(/[&<>"']/g, ch => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  }[ch]));
+}
+
 async function boot(){
   try{
     const res = await fetch('stops.json', {cache:'no-store'});
@@ -184,7 +190,10 @@ function renderStop(id){
   $('#s-no').textContent = `第 ${id} 站 ／ 共 ${n} 站`;
   $('#s-tt').textContent = s.title;
   $('#s-en').textContent = s.en;
-  $('#s-story').innerHTML = `<p>${s.story}</p>`;
+  $('#s-story').innerHTML = s.story
+    .split(/\n\s*\n/)
+    .map(p => `<p>${escapeHTML(p.trim())}</p>`)
+    .join('');
 
   // 照片：有檔就顯示，沒有就優雅留空
   const ph = $('#s-photo');
